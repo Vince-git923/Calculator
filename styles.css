@@ -112,9 +112,7 @@ body{
     background-color:gray;
     border:4px solid black;
 }
-.num:hover{
-    background-color: rgb(54, 54, 54);
-}
+
 .fn{
     background-color: black;
     border: 4px solid red;
@@ -131,6 +129,35 @@ input{
     width: 100%;
     
 }
+@keyframes numColor {
+   
+ 100%{
+        background-color: blue;
+ }
+    
+}
+@keyframes clrBtns {
+   
+    100%{
+           background-color: rgb(10, 84, 24);
+    }
+       
+   }
+
+@keyframes opBtns {
+   
+    100%{
+           background-color: rgb(84, 42, 10);
+    }
+       
+   }
+   @keyframes equalBtns {
+   
+    100%{
+           background-color: rgb(255, 0, 0);
+    }
+       
+   }
 
 
 .disable-select {
@@ -140,6 +167,9 @@ input{
    -moz-user-select: none; /* Firefox */
    -ms-user-select: none; /* Internet Explorer/Edge */
 }
+
+
+
 
 
 @media(max-width:300px){
@@ -161,6 +191,7 @@ input{
    .pads div{
     border: 2px solid rgb(0, 0, 0);
    }
+   
    .pads .equal, .pads .decimal{
     border: 2px solid red;
    }
@@ -170,14 +201,38 @@ input{
     font-size: 12px;
    }
 }
+
 @media(max-width:500px){
     .container{
         margin-top: 5vh;
         padding: 20px;
         height: 80vh;
-    } .finput{
+    }
+     .finput{
         font-size: 20px;
        }.secinput{
         font-size: 15px;
+       }
+       
+       .pads div:active{
+        background-color: rgb(30, 30, 30);
+       }
+       .clr-pads div:active{
+        background-color: rgb(8, 61, 8);
+       }
+}
+@media(hover:hover) {
+    .num:hover{
+        background-color: rgb(54, 54, 54);
+    }
+    .clr-pads div:hover{
+        background-color: rgb(8, 61, 8);
+       }
+       .op:hover{
+        background-color:brown;
+       }
+       .fn:hover{
+        background-color: rgb(255, 0, 0);
+        color:black
        }
 }

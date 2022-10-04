@@ -26,9 +26,11 @@ function dellete(){
     mainscreen.textContent = mainscreen.textContent.slice(0, mainscreen.textContent.length-1)
   tempnum1 = mainscreen.textContent
     
-    if(mainscreen.textContent === ""){
-        mainscreen.textContent = "0"
-        tempnum1 = ""
+    if(tempnum1 === ""){
+      
+      mainscreen.textContent = "0"
+      tempnum1 = ""
+        
     }
 }
 
@@ -98,9 +100,10 @@ function equalls(){
 
     if(num1 === ""){
     return
-  }else if(mainscreen.textContent === ""){
+  }else if(mainscreen.textContent === "" || mainscreen.textContent ==="0"){
    return
-  }else if( outputscreen.textContent === parseFloat(num1) +" "+oper + " "+ num2){
+  }
+  else if( outputscreen.textContent === parseFloat(num1) +" "+oper + " "+ num2){
     
     mainscreen.textContent = mainscreen.textContent  
    
@@ -181,6 +184,10 @@ document.addEventListener("keydown",(e)=>{
         tempnum1 += c
        mainscreen.textContent = tempnum1
        
+    }else if(mainscreen.textContent ==="" && c ==="."){
+     tempnum1 ="0"
+     tempnum1 += c
+     mainscreen.textContent = tempnum1
     }
      else if (mainscreen.textContent.includes(".") && c === "."){
        
@@ -244,5 +251,76 @@ if(e.code ==="Space"){
  }
  
 
+
+if(c ==="1"){
+  let key = document.getElementById("one")
+  key.style.animation = 'numColor 0.1s'
+}else if(c === "2"){
+  let key = document.getElementById("two")
+  key.style.animation = 'numColor 0.1s'
+}else if(c === "3"){
+  let key = document.getElementById("three")
+  key.style.animation = 'numColor 0.1s'
+}else if(c === "4"){
+  let key = document.getElementById("four")
+  key.style.animation = 'numColor 0.1s'
+}else if(c === "5"){
+  let key = document.getElementById("five")
+  key.style.animation = 'numColor 0.1s'
+}else if(c === "6"){
+  let key = document.getElementById("six")
+  key.style.animation = 'numColor 0.1s'
+}else if(c === "7"){
+  let key = document.getElementById("seven")
+  key.style.animation = 'numColor 0.1s'
+}else if(c === "8"){
+  let key = document.getElementById("eight")
+  key.style.animation = 'numColor 0.1s'
+}else if(c === "9"){
+  let key = document.getElementById("nine")
+  key.style.animation = 'numColor 0.1s'
+}else if(c === "0"){
+  let key = document.getElementById("zero")
+  key.style.animation = 'numColor 0.1s'
+}else if(e.code==="Space"){
+  let key = document.getElementById("allClear")
+  key.style.animation = 'clrBtns 0.1s'
+}else if(c === "Backspace"){
+  
+  del.style.animation = 'clrBtns 0.1s'
+}else if(c === "+"){
+let key = document.getElementById("plus")
+key.style.animation = 'opBtns 0.1s'
+}else if(c === "-"){
+  let key = document.getElementById("minus")
+  key.style.animation = 'opBtns 0.1s'
+  }
+  else if(c === "/"){
+    let key = document.getElementById("divide")
+    key.style.animation = 'opBtns 0.1s'
+    }
+    else if(c === "x"){
+      let key = document.getElementById("times")
+      key.style.animation = 'opBtns 0.1s'
+      }
+      else if(c === "Enter"){
+        equal.style.animation = "equalBtns 0.1s"
+      }
+
+ 
+  
+
  
 }) 
+document.addEventListener("keyup",()=>{
+  numpads.forEach(pad=>{
+    
+    pad.style.animation ="none"
+  })
+  ac.style.animation ="none"
+ del.style.animation ="none"
+ ops.forEach(op =>{
+  op.style.animation ="none"
+ })
+ equal.style.animation ="none"
+ })
