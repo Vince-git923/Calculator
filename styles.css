@@ -96,8 +96,7 @@ body{
 .finput{
     font-size: 30px;
     height: 50%;
-    display: flex;
-    flex-wrap: wrap;
+    
 }
 .secinput{
     font-family: sans-serif;
@@ -165,10 +164,19 @@ input{
    .pads .equal, .pads .decimal{
     border: 2px solid red;
    }
+   .finput{
+    font-size: 16px;
+   }.secinput{
+    font-size: 12px;
+   }
 }
 @media(max-width:500px){
     .container{
         margin-top: 5vh;
         padding: 20px;
-    }
+    } .finput{
+        font-size: 20px;
+       }.secinput{
+        font-size: 15px;
+       }
 }

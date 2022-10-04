@@ -15,7 +15,6 @@ let num2 = ""
 
 
 
-
 decimal.addEventListener("click",()=>{
     if(tempnum1 === ""){
         tempnum1 = "0"
@@ -35,12 +34,16 @@ function dellete(){
 
 numpads.forEach(pad =>{
     pad.addEventListener("click",()=>{
-       
-       
+      
+
+       if (tempnum1.length < 20){
        tempnum1 = tempnum1 += pad.textContent
         mainscreen.textContent = tempnum1
+       }else{
+        tempnum1 = tempnum1+=""
+       }
 
-
+       
 
         /*point not working after AC is clicked,
         if mainscreen  = 0 should = 0. when . is clicked
@@ -167,6 +170,11 @@ dellete()
 
 document.addEventListener("keydown",(e)=>{
     let c = e.key;
+
+    
+
+
+
     if(mainscreen.textContent === "0" && c === "."){
      
         tempnum1 =  "0";
@@ -181,9 +189,12 @@ document.addEventListener("keydown",(e)=>{
       }
  else if(c >= 0 && c <= 9 || c === "."){
     
-    
+    if(tempnum1.length < 20){
     tempnum1 = tempnum1 += c;
     mainscreen.textContent = tempnum1
+    }else{
+      tempnum1 =tempnum1 += ""
+    }
     
  } 
  else if(c === "Backspace"){
@@ -192,6 +203,11 @@ document.addEventListener("keydown",(e)=>{
    if(c === "*"){
     c = "x";
    }
+
+  
+
+
+
 
 
     num1 = outputscreen.textContent
